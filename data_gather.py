@@ -14,12 +14,14 @@ def loop_files(files):
         if data_file.endswith(".csv"):
             file_path = os.path.join(path, data_file)
             print "File path: %s " % file_path
-            with open(file_path, 'r', encoding='utf-8') as csvfile:
-                fileDialect = csv.Sniffer().sniff(csvfile.read(1024), delimiters=",")
-                csvfile.seek(0)
-            #     reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-            #     for row in reader:
-            #         print ', '.join(row)
+            with open(file_path, 'r') as csvfile:
+                counter = 0
+                # fileDialect = csv.Sniffer().sniff(csvfile.read(1024), delimiters=",")
+                # csvfile.seek(0)
+                reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+                print dir(reader)
+                # for row in reader: 
+                    # print ', '.join(row)
 
 def main():
     file_list = get_data_files(path)

@@ -1,6 +1,6 @@
-Nothing to see here now, but will soon be some documentation on a data visualization project for the BikeShare Data challenge. All data can be downloaded from the [BikeShare Data Challenge](http://bayareabikeshare.com/datachallenge) website.
+Nothing to see here now, but will soon be some documentation on a data visualization project for the BikeShare Data challenge. All data can be downloaded from the [BikeShare Data Challenge](http://bayareabikeshare.com/datachallenge) website. Unzip all data to a **data** directory for use with this project.
 
-Questions to ask of the data:
+**Questions to ask of the data:**
 
 
    * What days/times do the most/least bike rides occur
@@ -31,7 +31,7 @@ Questions to ask of the data:
       * which stations are the most popular
       * mean time to refill bikes (which stations get the most love)
 
-How to store and analyze this data
+**How to store and analyze this data**
 4 spreadsheets
 could either do sql and 4 tables, relate to one another, or 4 collections with each record as a document;
 Also can run scripts that do aggregations across the csv files and store the results in a database (redis?)

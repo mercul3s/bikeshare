@@ -1,1 +1,1 @@
-Nothing to see here now, but will soon be some documentation on a data visualization project for the BikeShare Data challenge.
+Nothing to see here now, but will soon be some documentation on a data visualization project for the BikeShare Data challenge. All data can be downloaded from the [BikeShare Data Challenge](http://bayareabikeshare.com/datachallenge) website.

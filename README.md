@@ -17,6 +17,7 @@ Nothing to see here now, but will soon be some documentation on a data visualiza
    * 
       * how many trips did each bike take
       * fastest and slowest bikes
+      * elevation data
    * how many subscribers vs customers - breakdown over time (ie can we infer that customers became subscribers)
    * most popular bike stations
    * 

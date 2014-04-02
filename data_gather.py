@@ -4,9 +4,9 @@ from pymongo import MongoClient
 import os
 import csv
 
-path = os.path.dirname("./data/")
+path   = os.path.dirname("./data/")
 client = MongoClient()
-db = client.bike_share
+db     = client.bike_share
 
 rebalancing = db.rebalancing
 stations    = db.stations
@@ -15,6 +15,7 @@ weather     = db.weather
 
 collections = [rebalancing, stations, trips, weather]
 
+# grab only our csv files for import
 def get_data_files(path):
     file_list = os.listdir(path)
     csv_files = []
@@ -23,7 +24,9 @@ def get_data_files(path):
             csv_files.append(data_file)
     return csv_files
 
-def loop_files(filename, collection):
+# map the header rows, data rows, and collections, and add
+# a document for each row in the file
+def insert_data_mongo(filename, collection):
     file_path = os.path.join(path, filename)
     with open(file_path, 'r') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
@@ -34,15 +37,12 @@ def loop_files(filename, collection):
            collection.insert(document)
            # print document
 
+# run all the things
 def main():
     file_list = get_data_files(path)
-    # print file_list
-
     csv_file_map = dict(zip(file_list, collections))
-    # print csv_file_map
-
     for csv, coll in csv_file_map.iteritems():
-        loop_files(csv, coll)
+        insert_data_mongo(csv, coll)
 
 if __name__ == '__main__':
     main()
